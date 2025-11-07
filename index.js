@@ -219,9 +219,9 @@ Cuando Promise.all() haya terminado: Consigue que se imprima por consola la url 
  */
 const fetchGithubUsers = async(userNames) =>{
     try {
-        const reponses = await userNames.map(e=>getGitHubUserProfile(e))
+        const responses = await userNames.map(e=>getGitHubUserProfile(e))
         const promesas = await Promise.all(responses)
-        return promesas.map(e=> e.name)
+        return promesas
     } catch (error) {
         console.log(error)
     }
